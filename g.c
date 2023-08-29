@@ -2,19 +2,19 @@
 float m_docena (float T)
 {
 	float D;
-	D=(T-((T*4/100)));
+	D=T-((T*4/100));
 	return D;
 }
 
 float docena (float T)
 {
 	float D;
-	D=(T-((T*10/100)));
+	D=T-((T*10/100));
 	return D;
 }
 int main() {
 	int c, p;
-	float PM, T;
+	float PM, PD, T;
 	printf("ingrese la cantidad que llevas: \n");
 	scanf("%d", &c);
 	printf("ingrese el precio del producto: \n");
@@ -22,14 +22,14 @@ int main() {
 	
 	T=c*p;
 	
-	if (c >= 6){
+	if (c >= 7 && c <= 12){
 		PM=m_docena(T);
 		printf("el Total con descuentro es: %.2f\n", PM);
 		printf("el Total sin descuento es: %.2f\n", T);
 	}
-	else if (c >= 12) {
-		PM=docena(T);
-		printf("el Total con descuentro es: %.2f\n", PM);
+	else if (c >= 13) {
+		PD=docena(T);
+		printf("el Total con descuentro es: %.2f\n", PD);
 		printf("el Total sin descuento es: %.2f\n", T);
 	}
 	else {
@@ -37,3 +37,4 @@ int main() {
 	}
 	return 0;
 }
+
